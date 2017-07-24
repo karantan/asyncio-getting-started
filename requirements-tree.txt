@@ -1,0 +1,8 @@
+pip-tools==1.9.0
+  - click [required: >=6, installed: 6.7]
+  - first [required: Any, installed: 2.0.1]
+  - six [required: Any, installed: 1.10.0]
+pipdeptree==0.10.1
+  - pip [required: >=6.0.0, installed: 9.0.1]
+setuptools==36.2.2
+wheel==0.29.0
