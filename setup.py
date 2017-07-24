@@ -15,7 +15,7 @@ setup(
     ],
     author='Gasper Karantan Vozel',
     author_email='karantan@gmail.com',
-    url='http://github.com/niteoweb/dmon-ec2-tasks',
+    url='http://github.com/karantan/asyncio-getting-started',
     keywords='asyncio',
     license='MIT License',
     packages=find_packages('src', exclude=['ez_setup']),
