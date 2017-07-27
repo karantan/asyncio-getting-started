@@ -1,4 +1,8 @@
 isort
+pytest-cov
+pytest
 pdbpp
 pipdeptree
 pip-tools
+responses
+testfixtures

@@ -28,21 +28,14 @@ Read `Makefile` for additional commands.
 Run
 ---
 
-To see how non-blocking asyncio works type:
+To see how blocking and non-blocking asyncio works type:
 
 ```bash
-make run-non-blocking
+make run
 ```
 
-
-Blocking asyncio code can be tested with the following command.
-
-```bash
-make run-blocking
-```
-
-The source code for blocking code is in `src/blocking_asyncio.py` and for
-non-blocking it is in `src/nonblocking_asyncio.py`.
+The source code for blocking code is in `src/basic.py` and tests can be found
+in `tests/test_basic.py`
 
 
 

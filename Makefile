@@ -3,11 +3,9 @@
 .DEFAULT_GOAL := build
 
 
-run-blocking:
-	@env/bin/python3 -m src.blocking_asyncio
+run:
+	@env/bin/python3 -m src.basic
 
-run-non-blocking:
-	@env/bin/python3 -m src.nonblocking_asyncio
 
 build:
 	virtualenv -p python3 env

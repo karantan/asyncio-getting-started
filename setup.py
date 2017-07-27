@@ -25,4 +25,11 @@ setup(
     install_requires=[
         'requests',
     ],
+    extras_require={
+        'develop':  [
+            'pytest',
+            'responses',
+            'testfixtures',
+        ],
+    },
 )
