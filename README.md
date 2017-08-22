@@ -38,6 +38,15 @@ The source code for blocking code is in `src/basic.py` and tests can be found
 in `tests/test_basic.py`
 
 
+Further Reading
+---------------
+
+[`asynctest`](https://github.com/Martiusweb/asynctest) is a really nice asyncIO
+test library. I have created a quick example how to use it in
+`tests/test_asynctest_basic.py`.
+
+The author gave a presentation in 2016 and here are the slides:
+[link](https://www.martiusweb.net/t/pyconfr-2016/).
 
 Contribute
 ----------

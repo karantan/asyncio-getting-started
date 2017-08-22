@@ -27,6 +27,7 @@ setup(
     ],
     extras_require={
         'develop':  [
+            'asynctest',
             'pytest',
             'responses',
             'testfixtures',
