@@ -55,9 +55,8 @@ class TestBasic(object):
         loop.run_until_complete(run_test())
 
     @responses.activate
-    @patch('src.basic.asyncio.sleep', new_callable=AsyncMock)
     @patch('src.basic.time.sleep')
-    def test_blocking_single_call(self, time_sleep, asyncio_sleep, loop):
+    def test_blocking_single_call(self, time_sleep, loop):
         from src.basic import blocking_call
 
         responses.add(responses.GET, 'https://www.google.com', status=200)
@@ -73,9 +72,8 @@ class TestBasic(object):
         loop.run_until_complete(run_test())
 
     @responses.activate
-    @patch('src.basic.asyncio.sleep', new_callable=AsyncMock)
     @patch('src.basic.time.sleep')
-    def test_blocking_multiple_calls(self, time_sleep, asyncio_sleep, loop):
+    def test_blocking_multiple_calls(self, time_sleep, loop):
         from src.basic import blocking_call
 
         responses.add(responses.GET, 'https://www.google.com', status=200)

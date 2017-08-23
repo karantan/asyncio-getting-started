@@ -19,7 +19,7 @@ logger.addHandler(ch)
 
 async def blocking_call(loop: BaseEventLoop, page: str):
     if page == 'https://www.yahoo.com':
-        await asyncio.sleep(1.0)
+        time.sleep(5.0)
     if page == 'https://www.google.com':
         time.sleep(10.0)
 
@@ -35,7 +35,7 @@ async def blocking_call(loop: BaseEventLoop, page: str):
 
 async def non_blocking_call(loop: BaseEventLoop, page: str):
     if page == 'https://www.yahoo.com':
-        await asyncio.sleep(1.0)
+        await asyncio.sleep(5.0)
     if page == 'https://www.google.com':
         await asyncio.sleep(10.0)
 
@@ -52,6 +52,9 @@ async def non_blocking_call(loop: BaseEventLoop, page: str):
 
 if __name__ == '__main__':  # pragma: no cover
     loop = asyncio.get_event_loop()
+    """
+    Non-blocking code will always complete in ~10s
+    """
     non_blocking_coros = [
         non_blocking_call(loop, 'https://www.google.com'),
         non_blocking_call(loop, 'https://www.yahoo.com'),
@@ -62,6 +65,12 @@ if __name__ == '__main__':  # pragma: no cover
     loop.run_until_complete(status)
     status.result()
 
+    """
+    Just before `Starting new HTTPS connection (1): www.google.com` we wait for
+    10 seconds because of the blocking `sleep(10)`
+
+    Blocking code will complete in 10s + 5s = 15s.
+    """
     blocking_coros = [
         blocking_call(loop, 'https://www.google.com'),
         blocking_call(loop, 'https://www.yahoo.com'),
