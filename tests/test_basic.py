@@ -29,7 +29,6 @@ class TestBasic(object):
             log.check(
                 ('root', 'INFO', 'Received content from https://www.google.com'),  # noqa
             )
-        loop.run_until_complete(run_test())
 
     @responses.activate
     @patch('src.basic.asyncio.sleep', new_callable=AsyncMock)
@@ -52,7 +51,6 @@ class TestBasic(object):
                 ('root', 'INFO', 'Received content from https://www.yahoo.com'),  # noqa
                 ('root', 'INFO', 'Received content from https://www.apple.com'),  # noqa
             )
-        loop.run_until_complete(run_test())
 
     @responses.activate
     @patch('src.basic.time.sleep')
@@ -69,7 +67,6 @@ class TestBasic(object):
             log.check(
                 ('root', 'INFO', 'Received content from https://www.google.com'),  # noqa
             )
-        loop.run_until_complete(run_test())
 
     @responses.activate
     @patch('src.basic.time.sleep')
@@ -92,4 +89,3 @@ class TestBasic(object):
                 ('root', 'INFO', 'Received content from https://www.yahoo.com'),  # noqa
                 ('root', 'INFO', 'Received content from https://www.apple.com'),  # noqa
             )
-        loop.run_until_complete(run_test())
